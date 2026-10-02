@@ -1,0 +1,4 @@
+# app-ads.txt da Out Of Office Dev Team
+# Preencher quando a conta AdMob estiver criada (o identificador aparece no AdMob, em Definições > Informações da conta).
+# Formato (retirar o # e trocar o identificador):
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

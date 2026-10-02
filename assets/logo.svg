@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Out Of Office Dev Team">
+<rect width="64" height="64" rx="14" fill="#182038"/>
+<rect x="14" y="10" width="26" height="44" rx="3" fill="#f2b83a"/>
+<rect x="19" y="16" width="16" height="32" rx="2" fill="#182038"/>
+<circle cx="32" cy="33" r="2.3" fill="#f2b83a"/>
+<path d="M44 40 L56 40 M51 34 L57 40 L51 46" fill="none" stroke="#5ad19a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
