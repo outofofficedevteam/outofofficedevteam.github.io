@@ -74,12 +74,13 @@ var GALLERY_CAPTIONS = {
   css.textContent =
     ".lb{position:fixed;inset:0;z-index:1000;background:rgba(10,14,28,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 16px 24px}" +
     ".lb[hidden]{display:none!important}" +
-    ".lb img{max-width:min(100%,1600px);max-height:calc(100vh - 140px);width:auto;height:auto;border-radius:10px;box-shadow:0 10px 40px rgba(0,0,0,.5)}" +
+    ".lb img{display:block;flex:none;max-width:none;max-height:none;border-radius:10px;box-shadow:0 10px 40px rgba(0,0,0,.5)}" +
     ".lb p{color:#e9ecf6;margin:12px 0 0;text-align:center;max-width:900px;font-size:1rem}" +
     ".lb button{position:absolute;border:0;background:rgba(255,255,255,.14);color:#fff;border-radius:999px;width:48px;height:48px;font-size:28px;line-height:48px;cursor:pointer;padding:0}" +
     ".lb button:hover,.lb button:focus-visible{background:rgba(255,255,255,.28);outline:none}" +
     ".lb .lb-close{top:12px;right:12px}.lb .lb-prev{left:12px;top:50%;margin-top:-24px}.lb .lb-next{right:12px;top:50%;margin-top:-24px}" +
-    "@media (max-width:600px){.lb .lb-prev,.lb .lb-next{top:auto;bottom:16px;margin:0}.lb{padding-bottom:80px}}";
+    "@media (max-width:600px){.lb .lb-prev,.lb .lb-next{top:auto;bottom:16px;margin:0}.lb{padding:56px 6px 80px}}" +
+    "@media (max-height:500px) and (min-width:601px){.lb{padding:8px 64px}.lb p{display:none}}";
   document.head.appendChild(css);
   var box = document.createElement("div");
   box.className = "lb";
@@ -101,6 +102,20 @@ var GALLERY_CAPTIONS = {
     for (var k = 0; k < slots.length; k++) if (slots[k].isConnected && !slots[k].hidden) out.push(slots[k]);
     return out;
   }
+  // Tamanho em píxeis: a maior caixa 16:9 que cabe no ecrã (até 1600 px de largura).
+  function fit() {
+    var small = window.innerWidth <= 600;
+    var w = Math.min(window.innerWidth - (small ? 12 : 140), 1600);
+    var short = !small && window.innerHeight <= 500;
+    var h = window.innerHeight - (small ? 200 : (short ? 16 : 120));
+    var r = (bImg.naturalWidth && bImg.naturalHeight) ? bImg.naturalWidth / bImg.naturalHeight : 16 / 9;
+    if (w / r > h) w = h * r;
+    w = Math.max(160, Math.floor(w));
+    bImg.style.width = w + "px";
+    bImg.style.height = Math.floor(w / r) + "px";
+  }
+  bImg.addEventListener("load", fit);
+  window.addEventListener("resize", function () { if (!box.hidden) fit(); });
   function show(idx) {
     var items = shown();
     if (!items.length) return;
@@ -108,6 +123,7 @@ var GALLERY_CAPTIONS = {
     var im = items[current].querySelector("img");
     var fc = items[current].querySelector("figcaption");
     bImg.src = im.src; bImg.alt = im.alt;
+    fit();
     bCap.textContent = fc ? fc.textContent : "";
     bPrev.hidden = bNext.hidden = items.length < 2;
   }
