@@ -40,10 +40,13 @@ var GALLERY_CAPTIONS = {
     var fig = document.createElement("figure");
     fig.className = "shot-item";
     fig.hidden = true;
+    fig.style.minWidth = "0";
     var link = document.createElement("a");
     link.href = base + name;
+    link.style.cssText = "display:block;aspect-ratio:16/9;overflow:hidden;border-radius:12px";
     var img = new Image();
     img.decoding = "async";
+    img.style.cssText = "display:block;width:100%;max-width:100%;height:100%;object-fit:cover";
     img.alt = captions[i - 1] || alt + " " + i;
     img.onload = (function (f) {
       return function () { f.hidden = false; section.hidden = false; };
