@@ -5,24 +5,24 @@
    (1.ª linha = 01.png). Texto vazio = sem legenda. */
 var GALLERY_CAPTIONS = {
   pt: [
-    "", // 01.png
-    "", // 02.png
-    "", // 03.png
-    "", // 04.png
-    "", // 05.png
-    "", // 06.png
-    "", // 07.png
-    ""  // 08.png
+    "«Eu só queria sair às seis.» Cada nível abre com uma mini-cena.", // 01.png
+    "Foste visto! Num open space cheio, cada olhar conta.", // 02.png
+    "Carrega no alarme de incêndio e toda a gente vai para o ponto de encontro.", // 03.png
+    "Aniversário de alguém: enquanto cantam os parabéns, o átrio fica livre.", // 04.png
+    "Hora extra: à noite, até o IT de serviço boceja.", // 05.png
+    "Reunião dos chefes: atrás do vidro, a Direção vê o corredor todo.", // 06.png
+    "Simulacro de evacuação: mistura-te com quem desce as escadas.", // 07.png
+    "O Grande Escape: 30 níveis, 9 departamentos, uma porta."  // 08.png
   ],
   en: [
-    "", // 01.png
-    "", // 02.png
-    "", // 03.png
-    "", // 04.png
-    "", // 05.png
-    "", // 06.png
-    "", // 07.png
-    ""  // 08.png
+    "“I just wanted to leave at six.” Every level opens with a mini-scene.", // 01.png
+    "Spotted! In a packed open space, every glance counts.", // 02.png
+    "Pull the fire alarm and everyone heads for the assembly point.", // 03.png
+    "Someone’s birthday: while everyone sings, the lobby is clear.", // 04.png
+    "Overtime: at night, even the IT person on duty yawns.", // 05.png
+    "The bosses’ meeting: behind the glass, management sees the whole corridor.", // 06.png
+    "Evacuation drill: blend in with the crowd heading for the stairs.", // 07.png
+    "The Great Escape: 30 levels, 9 departments, one door."  // 08.png
   ]
 };
 
