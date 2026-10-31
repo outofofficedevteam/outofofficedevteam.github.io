@@ -64,3 +64,4 @@ footer.site a{color:var(--muted)}
 .s2 .peek{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
 .s2 .note{margin:18px 0 0;color:var(--muted);font-size:.95rem}
 @media (max-width:640px){.s2 .compare{grid-template-columns:1fr}.s2 .compare .arrow{text-align:center;transform:rotate(90deg);line-height:1}}
+.about .grid{margin-top:8px}.about>h3{margin:26px 0 12px;font-size:1.15rem}.card h3 a{text-decoration:none}
